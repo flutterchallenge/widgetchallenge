@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterchallenge/widgets/spacer.dart';
 
+import 'widgets/clipper.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,7 +15,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        'spacer':(context) => AlignmentWithSpacer()
+        'spacer':(context) => AlignmentWithSpacer(),
+        'clipper':(context) => MyCustomClipper(),
       },
       home: MyHomePage(title: 'Flutter Challenge'),
     );
@@ -51,6 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text("Spacer"),
               subtitle: Text("Mange the space between the widget with spacer"),
               onTap: () => Navigator.pushNamed(context, "spacer"),
+            ),
+            ListTile(
+              title: Text("Custom Clipper"),
+              subtitle: Text("Mange the space between the widget with spacer"),
+              onTap: () => Navigator.pushNamed(context, "clipper"),
             )
           ],
         ));
