@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterchallenge/widgets/forms.dart';
 import 'package:flutterchallenge/widgets/spacer.dart';
 
 import 'widgets/clipper.dart';
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        'spacer':(context) => AlignmentWithSpacer(),
-        'clipper':(context) => MyCustomClipper(),
+        'spacer': (context) => AlignmentWithSpacer(),
+        'clipper': (context) => MyCustomClipper(),
+        'form': (context) => Forms(),
       },
       home: MyHomePage(title: 'Flutter Challenge'),
     );
@@ -25,16 +27,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -59,6 +51,11 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text("Custom Clipper"),
               subtitle: Text("Mange the space between the widget with spacer"),
               onTap: () => Navigator.pushNamed(context, "clipper"),
+            ),
+            ListTile(
+              title: Text("Forms"),
+              subtitle: Text("Form types with different widgets and validation"),
+              onTap: () => Navigator.pushNamed(context, "form"),
             )
           ],
         ));
