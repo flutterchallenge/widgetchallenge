@@ -160,6 +160,7 @@ _acceptSwitch(bool switchOn, onSwitchChanged) => Switch(
       activeTrackColor: Colors.green,
       inactiveThumbColor: Colors.white,
       inactiveTrackColor: Colors.red,
+      activeThumbImage: Image.asset('assets/images/flutter.png').image,
     );
 
 //Submit(Raised Button)
@@ -206,9 +207,10 @@ class _FormsState extends State<Forms> {
 
   void _handleShowHidePassword(bool show) {
     setState(() {
-     this._show = !show;
+      this._show = !show;
     });
   }
+
   void _onSwitchChanged(bool accept) {
     setState(() {
       this._accept = accept;
@@ -266,8 +268,8 @@ class _FormsState extends State<Forms> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text("Love this flutter form",
-                      style:
-                      TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold)),
+                      style: TextStyle(
+                          fontSize: 16.0, fontWeight: FontWeight.bold)),
                   _acceptSwitch(_accept, _onSwitchChanged),
                 ],
               ),
