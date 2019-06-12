@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Sample page</title>
+    <script>
+        function changeColor() {
+           var colors = ["black", "red", "green"];
+           var randonNumber = Math.floor(Math.random() * 3);
+           var myDiv = document.getElementById("container_box");
+           myDiv.style.backgroundColor = colors[randonNumber];
+           try { colorChanged.postMessage(colors[randonNumber]); } catch (err) {}
+        }
+    </script>
+    <style type="text/css">
+        #btn_color {
+           display: block;
+           margin: auto;
+        }
+        #container_box {
+            height: 500px;
+            width: 150px;
+            border: 1px solid #000 ;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container_box"></div> <br>
+    <button id="btn_color" onclick="changeColor()"> Change Color</button>
+</body>
+</html>

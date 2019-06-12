@@ -6,7 +6,6 @@ import 'package:flutterchallenge/countrylist.dart';
  * @Since: 2019/06/07
  * Forms with all basic components
  */
-final formKey = new GlobalKey<FormState>();
 // Color Converter
 _hexToColor(String code) =>
     Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
@@ -174,8 +173,6 @@ _resetForm() => RaisedButton.icon(
     onPressed: () {}, icon: Icon(Icons.close), label: Text("Reset Form"));
 
 class Forms extends StatefulWidget {
-  Forms() : super(key: formKey);
-
   @override
   _FormsState createState() => _FormsState();
 }
@@ -257,8 +254,7 @@ class _FormsState extends State<Forms> {
                 height: 8.0,
               ),
               _checkbox("School", 0, eduSelection[0], _handleCheckBox),
-              _checkbox("Higher education grades", 1, eduSelection[1],
-                  _handleCheckBox),
+              _checkbox("Higher education grades", 1, eduSelection[1], _handleCheckBox),
               _checkbox("Undergraduate", 2, eduSelection[2], _handleCheckBox),
               _checkbox("Post Graduate", 3, eduSelection[3], _handleCheckBox),
               SizedBox(

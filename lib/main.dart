@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterchallenge/widgets/forms.dart';
 import 'package:flutterchallenge/widgets/spacer.dart';
+import 'package:flutterchallenge/widgets/page_webview.dart';
 
 import 'widgets/clipper.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         'spacer': (context) => AlignmentWithSpacer(),
         'clipper': (context) => MyCustomClipper(),
         'form': (context) => Forms(),
+        'webview': (context) => MyWebView3()
       },
       home: MyHomePage(title: 'Flutter Challenge'),
     );
@@ -56,6 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text("Forms"),
               subtitle: Text("Form types with different widgets and validation"),
               onTap: () => Navigator.pushNamed(context, "form"),
+            ),
+            ListTile(
+              title: Text("WebView"),
+              subtitle: Text("All Webview details in depth"),
+              onTap: () => Navigator.pushNamed(context, "webview"),
             )
           ],
         ));
