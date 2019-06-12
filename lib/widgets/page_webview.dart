@@ -43,7 +43,7 @@ class _MyWebView2State extends State<MyWebView2> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Color changed to $_inital"),
+          title: Text("$_inital"),
         ),
         body: WebView(
           onWebViewCreated: (webViewController) {
@@ -57,7 +57,7 @@ class _MyWebView2State extends State<MyWebView2> {
                 onMessageReceived: (JavascriptMessage result) {
                   print("message ${result.message}");
                   setState(() {
-                    _inital = result.message;
+                    _inital = "Color changed to ${result.message}";
                   });
                 }),
           ]),
@@ -95,7 +95,7 @@ class _MyWebView3State extends State<MyWebView3> {
           itemCount: 3,
           itemBuilder: (item, index) {
             return Container(
-                height: 250.0,
+                height: 200.0,
                 child: ListTile(
                     title: Text(titles[index]),
                     subtitle: WebView(
